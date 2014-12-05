@@ -6,7 +6,7 @@
 
         /* page layout */
         html, body { margin: 0; padding: 0; }
-        body { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; font-size: 100%; background-color: #AAAAAA;  background-size: 100%; }
+        body { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; background-color: #AAAAAA; background-size: 100%; }
 
         #gallery { width: 1400px; height: 800px; margin: 100px auto 0px auto; }
 
@@ -33,7 +33,7 @@
 
         /* css to make the control bar awesome */
         .zg-control-bar { position: absolute; bottom: 0px; background: #2E3442; background: linear-gradient(to bottom, #2E3442 0%, #1E2534 100%); color: #FFFFFF; height: 2em; width: 100%; display: flex; }
-        .zg-control-bar > div { position: relative; font-size: 0.9em; padding: 0.1em 15px 0px 15px; }
+        .zg-control-bar > div { position: relative; font-size: 14px; padding: 7px 15px 0px 15px; }
         .zg-control-bar > div:not(:first-child) { border-left: 1px solid #444444; }
         .zg-control-bar > .zg-message { flex: 1; }
 
@@ -75,10 +75,6 @@
 
     <script>
         $(function(){
-
-
-
-
             $('#gallery').zeno_gallery({});
         });
     </script>
