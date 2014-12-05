@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>smith-net.org.uk</title>
+	<style>
+
+        /* page layout */
+        html, body { margin: 0; padding: 0; }
+        body { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; font-size: 100%; background-color: #AAAAAA;  background-size: 100%; }
+
+        #gallery { width: 1400px; height: 800px; margin: 100px auto 0px auto; }
+
+
+        /* main gallery stuff */
+        .zg-wrapper { position: relative; overflow: hidden; width: 100%; height: 100%; border: 1px solid #666666; }
+        .zg-frame { position: absolute; top: 50%; margin: 0px; padding: 0px; height: 100%; }
+        .zg-frame > div { margin: 0px; padding: 0px; display: inline-block; }
+
+        /* fullscreen */
+        :-webkit-full-screen .zg-wrapper { width: 100%; height: 100%; }
+
+        /* main image navigation */
+        .zg-prev-image, .zg-next-image { position: absolute; top: 0px; bottom: 0px; width: 90px; cursor: pointer; }
+        .zg-prev-image:after, .zg-next-image:after { content: ''; position: absolute; background: url(./assets/controls.png); width: 35px; height: 35px; top: 382px; }
+
+        .zg-prev-image { left: 0px; }
+        .zg-prev-image:after { background-position: -39px 0px; left: 50px; }
+        .zg-prev-image:hover:after { background-position: -74px 0px; }
+
+        .zg-next-image { right: 0px; }
+        .zg-next-image:after { background-position: -144px 0px; right: 50px; }
+        .zg-next-image:hover:after { background-position: -109px 0px; }
+
+        /* css to make the control bar awesome */
+        .zg-control-bar { position: absolute; bottom: 0px; background: #2E3442; background: linear-gradient(to bottom, #2E3442 0%, #1E2534 100%); color: #FFFFFF; height: 2em; width: 100%; display: flex; }
+        .zg-control-bar > div { position: relative; font-size: 0.9em; padding: 0.1em 15px 0px 15px; }
+        .zg-control-bar > div:not(:first-child) { border-left: 1px solid #444444; }
+        .zg-control-bar > .zg-message { flex: 1; }
+
+        .zg-control-bar > .zg-thumbnails, .zg-control-bar > .zg-slideshow, .zg-control-bar > .zg-fullscreen { width: 30px; padding: 0px; }
+        .zg-control-bar > .zg-thumbnails:hover, .zg-control-bar > .zg-slideshow:hover, .zg-control-bar > .zg-fullscreen:hover { background: #1E2534; cursor: pointer; }
+        .zg-control-bar > .zg-thumbnails:after, .zg-control-bar > .zg-slideshow:after, .zg-control-bar > .zg-fullscreen:after { content: ""; position: absolute; background: url(./assets/controls.png); width: 13px; height: 13px; }
+
+        .zg-control-bar > .zg-thumbnails:after { background-position: 0px 0px; top: 9px; left: 10px; }
+        .zg-control-bar > .zg-thumbnails.active:after { background-position: 0px -13px; }
+
+        .zg-control-bar > .zg-slideshow:after { background-position: -13px 0px; top: 9px; left: 10px; }
+        .zg-control-bar > .zg-slideshow.active:after { background-position: -13px -13px; }
+
+        .zg-control-bar > .zg-fullscreen:after { background-position: -26px 0px; top: 8px; left: 8px; }
+        .zg-control-bar > .zg-fullscreen.active:after { background-position: -26px -13px; }
+
+    </style>
+</head>
+<body>
+
+    <div id="gallery">
+        <div data-src="01.jpg" data-title="Image 01" data-description="Lorem ipsum dolar se amet"><img src="./images/01.jpg" title="dpp" alt=""></div>
+        <div data-src="03.jpg" data-title="Image 03" data-description="Lorem ipsum dolar se amet"><img src="./images/03.jpg" title="dpp" alt=""></div>
+        <div data-src="05.jpg" data-title="Image 05" data-description="Lorem ipsum dolar se amet"><img src="./images/05.jpg" title="dpp" alt=""></div>
+        <div data-src="06.jpg" data-title="Image 06" data-description="Lorem ipsum dolar se amet"><img src="./images/06.jpg" title="dpp" alt=""></div>
+        <div data-src="07.jpg" data-title="Image 07" data-description="Lorem ipsum dolar se amet"><img src="./images/07.jpg" title="dpp" alt=""></div>
+        <div data-src="09.jpg" data-title="Image 09" data-description="Lorem ipsum dolar se amet"><img src="./images/09.jpg" title="dpp" alt=""></div>
+        <div data-src="10.jpg" data-title="Image 10" data-description="Lorem ipsum dolar se amet"><img src="./images/10.jpg" title="dpp" alt=""></div>
+        <div data-src="11.jpg" data-title="Image 11" data-description="Lorem ipsum dolar se amet"><img src="./images/11.jpg" title="dpp" alt=""></div>
+        <div data-src="12.jpg" data-title="Image 12" data-description="Lorem ipsum dolar se amet"><img src="./images/12.jpg" title="dpp" alt=""></div>
+        <div data-src="13.jpg" data-title="Image 13" data-description="Lorem ipsum dolar se amet"><img src="./images/13.jpg" title="dpp" alt=""></div>
+        <div data-src="14.jpg" data-title="Image 14" data-description="Lorem ipsum dolar se amet"><img src="./images/14.jpg" title="dpp" alt=""></div>
+        <div data-src="15.jpg" data-title="Image 15" data-description="Lorem ipsum dolar se amet"><img src="./images/15.jpg" title="dpp" alt=""></div>
+    </div>
+
+    <script src="./assets/jquery.js"></script>
+    <script src="./assets/jquery-zeno-fullscreen.js"></script>
+    <script src="./assets/jquery-zeno-gallery.js"></script>
+
+    <script>
+        $(function(){
+
+
+
+
+            $('#gallery').zeno_gallery({});
+        });
+    </script>
+</body>
+</html>
