@@ -26,13 +26,6 @@
 (function($, undefined) {
     "use strict";
 
-    //create some basic jquery pointers
-
-
-    //grab the user agent and current hash string
-    var user_gent = navigator.userAgent.toLowerCase();
-    var url_hash  = window.location.hash.replace(/#\//, '');
-
     //get the key codes for the commonly used keys
     var keys = {'up': 38, 'down': 40, 'left': 37, 'right': 39, 'enter': 13, 'escape': 27, 'backspace': 8, 'space': 32};
 
@@ -49,7 +42,7 @@
         this._options = $.extend({}, defaults, options);
 
         //keep a reference to the various parts of the gallery dom
-        this._element = element;
+        this._element = element; 
 
         //start adding all the markup needed by the gallery
         this._element.children().wrapAll('<div class="zg-frame"/>');
@@ -183,14 +176,9 @@
         this.updateDisplayedImage();
     };
 
-    //update the gallery to display the current image
+    //update the gallery to display the current image - if we end up on the cloned elements - reset the display to the "real" element
     ZenoGallery.prototype.updateDisplayedImage = function () {
         console.info('ZenoGallery::updateDisplayedImage()');
-
-        console.log('current image: ' + this._current_image);
-        console.log('current margin: ' + this._element.find('.zg-frame').css('margin-left'));
-
-        //animate the scroll, if we end up on the cloned elements - reset the display to the "real" element
         this._element.find('.zg-frame').animate({ 'margin-left' : ((this._options.width * this._current_image) * -1) }, this._options.speed, function() {
             if (this._current_image <= 0 || this._current_image > this._total_images) {
                 this._current_image = ((this._current_image > this._total_images) ? 1 : this._total_images);
